@@ -2,7 +2,7 @@
   "name": "devops-toolbox-agent",
   "version": "0.0.1",
   "description": "Devops Toolbox Agent",
-  "main": "build/index.ts",
+  "main": "build/index.js",
   "scripts": {
     "start": "nodemon ./src/index.ts",
     "build": "tsc",
