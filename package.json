@@ -1,13 +1,13 @@
 {
   "name": "devops-toolbox-agent",
   "version": "0.0.1",
-  "description": "",
+  "description": "Devops Toolbox Agent",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.ts",
     "build": "tsc",
     "lint": "eslint ./src",
-    "lint:test": "eslint ./src --ext .ts",
+    "lint:test": "eslint ./src --max-warnings 0",
     "lint:fix": "eslint ./src --fix"
   },
   "repository": {
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "eslint": "^7.14.0",
-    "eslint-config-codex": "github:codex-team/eslint-config",
+    "eslint-config-codex": "^1.4.0",
     "nodemon": "^2.0.6",
     "ts-node": "^9.0.0"
   }
