@@ -6,7 +6,7 @@ dotenv.config({
 });
 
 /**
- *
+ * Class for settings
  */
 export default class Config {
   /**
