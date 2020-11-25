@@ -5,6 +5,9 @@ dotenv.config({
   path: path.join(__dirname, '../../.env'),
 });
 
+/**
+ *
+ */
 export default class Config {
   /**
    * Api url
@@ -17,5 +20,5 @@ export default class Config {
   /**
    * Server token
    */
-  public static token: string = process.env.Token!;
+  public static token: string = process.env.TOKEN!;
 }
