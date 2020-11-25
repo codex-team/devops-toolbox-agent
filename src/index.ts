@@ -82,13 +82,13 @@ const cron: Cron = new Cron(Config.schedule, async () => {
 
   const payload: MessagePayload = {
     services,
-  }
+  };
 
   const requestMessage: RequestMessage = {
     messageId: '1',
     type: 'services-update',
     payload,
-  }
+  };
 
   const res: Response = await fetch(Config.apiUrl, {
     method: 'put',
@@ -98,6 +98,4 @@ const cron: Cron = new Cron(Config.schedule, async () => {
       Authorization: Config.token,
     },
   });
-
-  console.log(await res.json());
 });
