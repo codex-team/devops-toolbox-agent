@@ -1,10 +1,13 @@
 import fetch, { Response } from 'node-fetch';
-import Cron from './cron';
+import TaskManager from './taskManager';
 import Config from './config';
 import { Service } from './types';
 import { MessagePayload, RequestMessage } from './utils/protocol/types';
 
-const cron: Cron = new Cron(Config.schedule, async () => {
+/**
+ * Task Manager will send current services on the server on a schedule
+ */
+const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
   const services: Service[] = [
     {
       type: 'nginx',
