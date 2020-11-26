@@ -1,13 +1,13 @@
 /**
- * Interface for service
+ * Interface for service which we send to API
  */
 interface Service {
   /**
-   * Service type
+   * Service type. It could be 'nginx', 'docker', 'ports', 'interfaces' or 'disk'
    */
   type: string;
   /**
-   * Service payload
+   * Service payload. You can read about it in docs/services.md
    */
   payload: object | object[];
 }

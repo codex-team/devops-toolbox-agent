@@ -6,15 +6,15 @@ import cron from 'node-cron';
  */
 export default class TaskManager {
   /**
-   * @private scheduledTask - scheduled task
+   * The scheduled task which TaskManager does on a schedule
    */
   private scheduledTask: cron.ScheduledTask;
 
   /**
-   * Constructor
+   * Constructor which create scheduled task
    *
-   * @param schedule - schedule
-   * @param task - task
+   * @param schedule - Task schedule. TaskManager will do the task on a that schedule
+   * @param task - The task which TaskManager will do
    */
   constructor(schedule: string, task: () => Promise<void>) {
     this.scheduledTask = cron.schedule(schedule, task);
