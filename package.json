@@ -5,11 +5,17 @@
   "main": "build/index.js",
   "scripts": {
     "start": "nodemon ./src/index.ts",
+    "package": "pkg . --out-path ./bin",
     "build": "tsc",
     "lint": "eslint ./src",
     "lint:test": "eslint ./src --max-warnings 0",
     "lint:fix": "eslint ./src --fix"
   },
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "assets": "./.env"
+  },
+  "bin": "build/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codex-team/devops-toolbox-agent.git"
@@ -27,6 +33,7 @@
     "dotenv": "^8.2.0",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
+    "pkg": "^4.4.9",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
