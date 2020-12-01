@@ -7,6 +7,7 @@ import { MessagePayload, RequestMessage } from './utils/protocol/types';
 /**
  * Task Manager will send current services to the API by a schedule
  */
+
 const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
   const services: Service[] = [
     {
