@@ -1,4 +1,4 @@
-name: Build
+name: Build and make binaries
 
 on:
   pull_request:
@@ -16,5 +16,17 @@ jobs:
           actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install all dependencies
       - run: npm i
+
+      - name: Build project
       - run: npm run build
+
+      - name: Make binaries
+      - run: npm run package
+      - uses:
+          actions/upload-artifact@v2
+      - with:
+          name: devops-toolbox-agent
+          path: bin
