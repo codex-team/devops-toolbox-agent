@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         node-version: [14]
@@ -21,13 +21,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install all dependencies
-        run: npm i
+        run: yarn install
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Make binaries
-        run: npm run package
+        run: yarn package
 
       - name: Use the Upload Artifact
         uses:
