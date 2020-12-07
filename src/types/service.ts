@@ -1,7 +1,7 @@
 /**
  * Interface for service which we send to API
  */
-interface Service {
+export default interface Service {
   /**
    * Service type. It could be 'nginx', 'docker', 'ports', 'interfaces' or 'disk'
    */
@@ -9,7 +9,5 @@ interface Service {
   /**
    * Service payload. You can read about it in docs/services.md
    */
-  payload: object | object[];
+  payload: Record<string, unknown> [];
 }
-
-export default Service;
