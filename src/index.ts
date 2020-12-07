@@ -1,5 +1,4 @@
 import fetch, { Response } from 'node-fetch';
-import path from 'path';
 import TaskManager from './taskManager';
 import Config from './config';
 import { Service } from './types';
