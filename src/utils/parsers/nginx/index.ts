@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { NginxPayload } from './types';
-const ConfigParser = require('@webantic/nginx-config-parser');
+import ConfigParser from '@webantic/nginx-config-parser';
 
 /**
  * Nginx Parser
