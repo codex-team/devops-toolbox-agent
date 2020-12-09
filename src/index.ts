@@ -27,7 +27,6 @@ const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
   };
 
   const requestMessage: RequestMessage = {
-    messageId: '1',
     type: 'services-update',
     payload,
   };
