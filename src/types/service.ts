@@ -9,7 +9,7 @@ interface Service {
   /**
    * Service payload. You can read about it in docs/services.md
    */
-  payload: object | object[];
+  payload: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export default Service;
