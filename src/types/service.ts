@@ -9,5 +9,5 @@ export default interface Service {
   /**
    * Service payload. You can read about it in docs/services.md
    */
-  payload: Record<string, unknown> [];
+  payload: Record<string, unknown> | Record<string, unknown>[];
 }

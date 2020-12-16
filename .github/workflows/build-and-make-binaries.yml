@@ -1,0 +1,37 @@
+name: Build and make binaries
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [14]
+    steps:
+      - uses:
+          actions/checkout@v2
+
+      - name: Set up project
+        uses:
+          actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install all dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Make binaries
+        run: yarn package
+
+      - name: Use the Upload Artifact
+        uses:
+          actions/upload-artifact@v2
+        with:
+          name: devops-toolbox-agent
+          path: bin
