@@ -10,14 +10,30 @@
 
 The running command requires 3 parameters:  
 _SCHEDULE_:  
-\* * * * * *   
-| | | | | |   
-| | | | | +--- Years            (range: 1900-3000)  
-| | | | +----- Days of week     (range: 1-7)  
-| | | +------- Months           (range: 1-12)  
-| | +--------- Days of months   (range: 1-31)  
-| +----------- Hours            (range: 0-23)  
-+------------- Minutes          (range: 0-59)  
+### Allowed fields
+
+```
+ # ┌────────────── second (optional)
+ # │ ┌──────────── minute
+ # │ │ ┌────────── hour
+ # │ │ │ ┌──────── day of month
+ # │ │ │ │ ┌────── month
+ # │ │ │ │ │ ┌──── day of week
+ # │ │ │ │ │ │
+ # │ │ │ │ │ │
+ # * * * * * *
+```
+
+### Allowed values
+
+|     field    |        value        |
+|--------------|---------------------|
+|    second    |         0-59        |
+|    minute    |         0-59        |
+|     hour     |         0-23        |
+| day of month |         1-31        |
+|     month    |     1-12 (or names) |
+|  day of week |     0-7 (or names, 0 or 7 are sunday)  |
 _TOKEN_  
 _NGINX_DIR_(optional)
 
