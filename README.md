@@ -4,6 +4,9 @@
 `npm install` or `yarn install` 
 
 ## Run
+### **Example:**
+`./devops-toolbox-agent-macos --SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""`   
+
 The running command requires 3 parameters:  
 _SCHEDULE_:  
 \* * * * * *   
@@ -19,14 +22,12 @@ _NGINX_DIR_(optional)
 
 _SCHEDULE_ is Cron schedule, _TOKEN_ is Server token.
 
-### **Example:**
-`npm run start --API_URL="http://localhost:3000/services" --SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""`
 
-# How to get binaries:
+## How to get binaries:
 
 1) Build a project: `npm run build`
 2) Create binaries: `npm run package`
 
-# Help
+## Help
 
 To get additional help run `yarn start --help`
