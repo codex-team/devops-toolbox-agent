@@ -15,7 +15,7 @@ _SCHEDULE_:
 | +----------- Hours            (range: 0-23)  
 +------------- Minutes          (range: 0-59)  
 _TOKEN_  
-_NGINX_DIR_
+_NGINX_DIR_(optional)
 
 _SCHEDULE_ is Cron schedule, _TOKEN_ is Server token.
 

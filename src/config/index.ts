@@ -18,8 +18,9 @@ const argv = yargs(process.argv.slice(2)).options({
   },
   NGINX_DIR: {
     type: 'string',
-    demandOption: true,
+    demandOption: false,
     description: 'Nginx directory',
+    default: '/etc/nginx',
   },
 }).argv;
 
