@@ -21,4 +21,8 @@ export default class Config {
    * Server token
    */
   public static token: string = process.env.TOKEN!;
+  /**
+   * Nginx directory
+   */
+  public static nginxDir: string = process.env.NGINX_DIR!;
 }

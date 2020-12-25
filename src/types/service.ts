@@ -1,7 +1,7 @@
 /**
  * Interface for service which we send to API
  */
-interface Service {
+export default interface Service {
   /**
    * Service type. It could be 'nginx', 'docker', 'ports', 'interfaces' or 'disk'
    */
@@ -11,5 +11,3 @@ interface Service {
    */
   payload: Record<string, unknown> | Record<string, unknown>[];
 }
-
-export default Service;
