@@ -6,7 +6,7 @@
 ## Run
 ### **Example:**
 `./devops-toolbox-agent-macos --SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""`    
-`start devops-toolbox-agent-win.exe --SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""`
+`start devops-toolbox-agent-win.exe '--SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""'`
 
 The running command requires 3 parameters:  
 _SCHEDULE_:  
