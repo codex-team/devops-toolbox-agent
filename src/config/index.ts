@@ -28,7 +28,7 @@ const argv = yargs(process.argv.slice(2)).options({
  */
 export default class Config {
   /**
-   * Api url
+   * API url to which we send current services on the server
    */
   public static apiUrl: string = argv.API_URL!;
   /**
