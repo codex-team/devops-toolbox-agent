@@ -4,14 +4,20 @@
 `npm install` or `yarn install` 
 
 ## Run
-To run agent you should use `npm` or `yarn`.  
 The running command requires 3 parameters:  
-_API_URL_  
-_SCHEDULE_  
-_TOKEN_
-_--NGINX_DIR_
+_SCHEDULE_:  
+\* * * * * *   
+| | | | | |   
+| | | | | +--- Years            (range: 1900-3000)  
+| | | | +----- Days of week     (range: 1-7)  
+| | | +------- Months           (range: 1-12)  
+| | +--------- Days of months   (range: 1-31)  
+| +----------- Hours            (range: 0-23)  
++------------- Minutes          (range: 0-59)  
+_TOKEN_  
+_NGINX_DIR_
 
-Where _API_URL_ is API url to which we send current services on the server, _SCHEDULE_ is Cron schedule, TOKEN is Server token.
+_SCHEDULE_ is Cron schedule, _TOKEN_ is Server token.
 
 ### **Example:**
 `npm run start --API_URL="http://localhost:3000/services" --SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""`
