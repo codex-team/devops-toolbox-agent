@@ -12,7 +12,7 @@ export default class NginxParser {
    * @param path - absolute path to nginx/sites-enabled
    */
   public static parse(path: string): NginxPayload[] {
-    const files = fs.readdirSync(path).filter(file => file.match(/\.conf/));
+    const files = fs.readdirSync(path);
 
     const parser = new ConfigParser();
     const configs = files.map(file => parser.readConfigFile(path + '/' + file, {
@@ -22,7 +22,7 @@ export default class NginxParser {
     const nginxPayloads: NginxPayload[] = [];
 
     for (const config of configs) {
-      const httpServer = config.http?.server;
+      const httpServer = config.server;
 
       if (!httpServer) {
         continue;

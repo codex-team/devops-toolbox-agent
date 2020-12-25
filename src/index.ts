@@ -10,6 +10,7 @@ import { NginxPayload } from './utils/parsers/nginx/types';
  * Task Manager will send current services to the API by a schedule
  */
 const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
+  console.log('🛰 Parsing configs...');
   /**
    * Parse nginx config file
    */
@@ -31,6 +32,7 @@ const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
     payload,
   };
 
+  console.log('🚀 Sending message to API...');
   const res: Response = await fetch(Config.apiUrl, {
     method: 'put',
     body: JSON.stringify(requestMessage),
@@ -39,4 +41,10 @@ const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
       Authorization: Config.token,
     },
   });
+
+  if (res.status === 200) {
+    console.log('✅ Services successful send!');
+  } else {
+    console.log('❌ Something went wrong while sending message...');
+  }
 });
