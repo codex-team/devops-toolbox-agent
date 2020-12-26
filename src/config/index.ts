@@ -28,8 +28,20 @@ const argv = yargs(process.argv.slice(2)).options({
  * Class for settings
  */
 export default class Config {
+  /**
+   * Api url
+   */
   public static apiUrl: string = argv.API_URL!;
+  /**
+   * Cron schedule
+   */
   public static schedule: string = argv.SCHEDULE!;
+  /**
+   * Server token
+   */
   public static token: string = argv.TOKEN!;
+  /**
+   * Nginx directory
+   */
   public static nginxDir: string = argv.NGINX_DIR!;
 }
