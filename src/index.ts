@@ -5,6 +5,7 @@ import { Service } from './types';
 import { MessagePayload, RequestMessage } from './utils/protocol/types';
 import NginxParser from './utils/parsers/nginx';
 import { NginxPayload } from './utils/parsers/nginx/types';
+import path from 'path';
 
 /**
  * Task Manager will send current services to the API by a schedule
@@ -14,7 +15,7 @@ const taskManager: TaskManager = new TaskManager(Config.schedule, async () => {
   /**
    * Parse nginx config file
    */
-  const nginxPayloads: NginxPayload[] = NginxParser.parse(Config.nginxDir + '/sites-enabled');
+  const nginxPayloads: NginxPayload[] = NginxParser.parse(path.join(Config.nginxDir, 'sites-enabled'));
 
   const services: Service[] = [];
 

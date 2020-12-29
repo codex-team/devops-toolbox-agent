@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { NginxPayload } from './types';
 import ConfigParser from '@webantic/nginx-config-parser';
+import path from 'path';
 
 /**
  * Nginx Parser
@@ -9,13 +10,13 @@ export default class NginxParser {
   /**
    * The method that parses all nginx configs
    *
-   * @param path - absolute path to nginx/sites-enabled
+   * @param configsPath - absolute path to nginx/sites-enabled
    */
-  public static parse(path: string): NginxPayload[] {
-    const files = fs.readdirSync(path);
+  public static parse(configsPath: string): NginxPayload[] {
+    const files = fs.readdirSync(configsPath);
 
     const parser = new ConfigParser();
-    const configs = files.map(file => parser.readConfigFile(path + '/' + file, {
+    const configs = files.map(file => parser.readConfigFile(path.join(configsPath, file), {
       parseIncludes: false,
     }));
 
