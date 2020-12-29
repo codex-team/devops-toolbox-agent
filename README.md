@@ -9,14 +9,13 @@
 or  
 ```start devops-toolbox-agent-win.exe '--SCHEDULE="* * * * *" --TOKEN="" --NGINX_DIR=""'```
 
-The running command requires 3 parameters:  
-`TOKEN`  
-`SCHEDULE`   
-`NGINX_DIR` (optional);   
+The running command requires 3 parameters:
 
-`TOKEN` is Server token   
-`NGINX_DIR` (default path is `/etc/nginx` )   
-`SCHEDULE` is Cron schedule (guide below);
+Parameter  | Is required | Description
+-----------|-------------|------------
+`TOKEN`    |+            |Authorization token of server
+`SCHEDULE` |+            |Cron schedule for running 
+`NGINX_DIR`|- (default: `/etc/nginx`)|Path to nginx service on server
 
 ### Allowed fields
 ```
