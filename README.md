@@ -55,6 +55,13 @@ Parameter  | Is required | Description
 \* * * 1,2,3 * * - Every minute in january, february and march   
 0 9 1-7 * 1 * - First monday of every month at 9 am
 
+## API address
+
+You can also build binaries with your own api address. Add `API_URL` variable to `.env` file like this:
+```dotenv
+# API url to which we send current services on the server
+API_URL=https://api.toolbox.codex.so/services
+```
 
 ## How to get binaries:
 
