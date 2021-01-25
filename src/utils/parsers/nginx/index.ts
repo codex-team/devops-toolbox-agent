@@ -1,7 +1,7 @@
 import fs from 'fs';
 import ConfigParser from '@webantic/nginx-config-parser';
 import path from 'path';
-import { NginxServerPayload } from './types';
+import { NginxServerPayload, NginxServerConfig } from './types';
 /**
  * Nginx Parser
  */
@@ -22,7 +22,7 @@ export default class NginxParser {
     /**
      * Array of server configs
      */
-    let servers: any[] = [];
+    let servers: NginxServerConfig[] = [];
 
     /**
      * One config can contain many configs
