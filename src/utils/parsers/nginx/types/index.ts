@@ -1,8 +1,9 @@
-import { NginxPayload } from './nginxPayload';
+import { NginxServerPayload, NginxServerConfig } from './nginxServerPayload';
 
 /**
  * Main export point
  */
 export {
-  NginxPayload
+  NginxServerPayload,
+  NginxServerConfig
 };

@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "start": "nodemon ./src/index.ts",
-    "package": "pkg . --out-path ./bin",
+    "package": "pkg . --out-path ./bin --target node12-linux",
     "build": "tsc",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",

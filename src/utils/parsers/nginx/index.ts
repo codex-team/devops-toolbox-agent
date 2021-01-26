@@ -1,8 +1,7 @@
 import fs from 'fs';
-import { NginxPayload } from './types';
 import ConfigParser from '@webantic/nginx-config-parser';
 import path from 'path';
-
+import { NginxServerPayload, NginxServerConfig } from './types';
 /**
  * Nginx Parser
  */
@@ -12,7 +11,7 @@ export default class NginxParser {
    *
    * @param configsPath - absolute path to nginx/sites-enabled
    */
-  public static parse(configsPath: string): NginxPayload[] {
+  public static parse(configsPath: string): NginxServerPayload[] {
     const files = fs.readdirSync(configsPath);
 
     const parser = new ConfigParser();
@@ -20,22 +19,44 @@ export default class NginxParser {
       parseIncludes: false,
     }));
 
-    const nginxPayloads: NginxPayload[] = [];
+    /**
+     * Array of server configs
+     */
+    let servers: NginxServerConfig[] = [];
 
+    /**
+     * One config can contain many configs
+     */
     for (const config of configs) {
-      const httpServer = config.server;
+      const server = config.server;
 
-      if (!httpServer) {
+      if (!server) {
         continue;
       }
 
-      // eslint-disable-next-line camelcase
-      const { listen, server_name: serverName, 'location /': location } = httpServer;
+      /**
+       * If we get config is like on line 26 then we merge all configs in this config with main array of configs
+       */
+      if (Array.isArray(server)) {
+        servers = servers.concat(server);
+        continue;
+      }
 
-      const payload: NginxPayload = {
+      /**
+       * If we get default config then we push it in main array of configs
+       */
+      servers.push(server);
+    }
+
+    const nginxPayloads: NginxServerPayload[] = [];
+
+    for (const server of servers) {
+      // eslint-disable-next-line camelcase
+      const { listen, server_name: serverName, 'location /': location } = server;
+      const payload: NginxServerPayload = {
         listen,
         serverName,
-        proxyPass: location.proxy_pass,
+        proxyPass: location?.proxy_pass,
       };
 
       nginxPayloads.push(payload);
