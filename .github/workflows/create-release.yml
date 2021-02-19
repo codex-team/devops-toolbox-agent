@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+      - uses:
+          actions/checkout@v2
+
       - name: Set up project
         uses:
           actions/setup-node@v1
