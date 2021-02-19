@@ -1,0 +1,53 @@
+name: Create a new release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses:
+          actions/checkout@v2
+
+      - name: Set up project
+        uses:
+          actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install all dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Make binaries
+        run: yarn package
+
+      - name: Get package info
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.package.outputs.version }}
+          release_name: v${{ steps.package.outputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: bin/devops-toolbox-agent
+          asset_name: devops-toolbox-agent
+          asset_content_type: application/octet-stream
