@@ -25,6 +25,10 @@ jobs:
       - name: Make binaries
         run: yarn package
 
+      - name: Get package info
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
