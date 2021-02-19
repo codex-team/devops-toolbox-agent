@@ -3,7 +3,7 @@ name: Create a new release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
