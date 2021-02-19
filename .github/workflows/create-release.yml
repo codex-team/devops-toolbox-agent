@@ -1,9 +1,9 @@
+name: Create a new release
+
 on:
   push:
     branches:
       - master
-
-name: Upload Release Asset
 
 jobs:
   build:
