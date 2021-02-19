@@ -2,8 +2,8 @@ name: Create a new release
 
 on:
   push:
-#    branches:
-#      - master
+    branches:
+      - master
 
 jobs:
   build:
@@ -39,8 +39,7 @@ jobs:
         with:
           tag_name: v${{ steps.package.outputs.version }}
           release_name: v${{ steps.package.outputs.version }}
-#          draft: false
-          draft: true
+          draft: false
           prerelease: false
 
       - name: Upload Release Asset
