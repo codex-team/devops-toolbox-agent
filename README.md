@@ -1,5 +1,5 @@
 # DevOps Toolbox Agent
-##[Download](https://github.com/codex-team/devops-toolbox-agent/releases/latest/download/devops-toolbox-agent) for Linux
+## [Download](https://github.com/codex-team/devops-toolbox-agent/releases/latest/download/devops-toolbox-agent) for Linux
 
 Releases and changes [page](https://github.com/codex-team/devops-toolbox-agent/releases/latest).
 
@@ -10,10 +10,10 @@ The running command requires 3 parameters:
 Parameter  | Description | |
 -----------|-------------|------------
 `TOKEN`    | Authorization token of server | required
-`SCHEDULE` | Cron schedule for running| required
+`SCHEDULE` | Cron schedule for running | required
 `NGINX_DIR`| Path to nginx service on server |
-*default ```NGINX_DIR = /etc/nginx```*
 
+*default ```NGINX_DIR = /etc/nginx```*
 *cron schedule [template](https://crontab.guru)* 
 ### **Example:**
 
@@ -27,7 +27,7 @@ start devops-toolbox-agent-win.exe '--SCHEDULE="* * * * *" --TOKEN="server_token
 
 ### **Other parameters (.env)**
 
-####**API address**
+#### **API address**
 
 You can also build binaries with your own api address. Add `API_URL` variable to `.env` file like this:
 ```dotenv
