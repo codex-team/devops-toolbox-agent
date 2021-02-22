@@ -1,7 +1,9 @@
 # DevOps Toolbox Agent
-## [Download](https://github.com/codex-team/devops-toolbox-agent/releases/latest/download/devops-toolbox-agent) for Linux
+This application (as part of DevOps Toolbox) working on the server, collects information about services and sends them to the [server](https://github.com/codex-team/devops-toolbox-api), which operates with the [client](https://github.com/codex-team/devops-toolbox-app) application.
 
+[Download](https://github.com/codex-team/devops-toolbox-agent/releases/latest/download/devops-toolbox-agent) for Linux. 
 Releases and changes [page](https://github.com/codex-team/devops-toolbox-agent/releases/latest).
+
 
 ## Run
 
