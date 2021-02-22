@@ -14,8 +14,9 @@ Parameter  | Description | |
 `NGINX_DIR`| Path to nginx service on server |
 
 *default ```NGINX_DIR = /etc/nginx```*
+
 *cron schedule [template](https://crontab.guru)* 
-### **Example:**
+### Example:
 
 ```shell
 ./devops-toolbox-agent-macos --SCHEDULE="* * * * *" --TOKEN="server_token" --NGINX_DIR="/etc/nginx"
@@ -25,9 +26,9 @@ or
 start devops-toolbox-agent-win.exe '--SCHEDULE="* * * * *" --TOKEN="server_token" --NGINX_DIR="./"'
 ```
 
-### **Other parameters (.env)**
+### Other parameters (.env)
 
-#### **API address**
+#### API address
 
 You can also build binaries with your own api address. Add `API_URL` variable to `.env` file like this:
 ```dotenv
